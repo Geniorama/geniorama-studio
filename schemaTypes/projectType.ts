@@ -6,13 +6,20 @@ export const projectType = defineType({
   type: 'document',
   fields: [
     defineField({
-        name: 'language',
-        type: 'string',
-        validation: (rule) => rule.required(),
+      name: 'language',
+      type: 'string',
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'title',
       type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'category',
+      title: 'Categoría',
+      type: 'reference',
+      to: [{type: 'category'}],
       validation: (rule) => rule.required(),
     }),
     defineField({
